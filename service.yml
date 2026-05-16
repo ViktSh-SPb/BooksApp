@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: booksapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: booksapp
+  ports:
+    - protocol: TCP
+      name: http-traffic
+      port: 10003
+      targetPort: 10003

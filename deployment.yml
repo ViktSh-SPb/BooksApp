@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booksapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: booksapp
+  template:
+    metadata:
+      labels:
+        app: booksapp
+    spec:
+      containers:
+        - name: booksapp
+          image: viktsh/books_app:1
+          ports:
+            - containerPort: 10003
